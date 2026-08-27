@@ -1,0 +1,15 @@
+[
+  { "id": "zj1-cs348b-ces9151", "name": "TOTO ZJ1 床排水 手洗いあり (CES9151)", "query": "TOTO CES9151 トイレ" },
+  { "id": "zj1-cs348b-ces9150", "name": "TOTO ZJ1 床排水 手洗いなし (CES9150)", "query": "TOTO CES9150 トイレ" },
+  { "id": "zr1-cs354bm-ces9155m", "name": "TOTO ZR1 床排水リモデル 手洗いあり (CES9155M)", "query": "TOTO CES9155M トイレ" },
+  { "id": "zr1-cs354bm-ces9154m", "name": "TOTO ZR1 床排水リモデル 手洗いなし (CES9154M)", "query": "TOTO CES9154M トイレ" },
+  { "id": "qr-cs232b-sh233ba", "name": "TOTO ピュアレストQR 床排水 手洗いあり (CS232B+SH233BA)", "query": "TOTO CS232B SH233BA トイレ" },
+  { "id": "qr-cs232b-sh232ba", "name": "TOTO ピュアレストQR 床排水 手洗いなし (CS232B+SH232BA)", "query": "TOTO CS232B SH232BA トイレ" },
+  { "id": "qr-cs232bp-sh233ba", "name": "TOTO ピュアレストQR 壁排水 手洗いあり (CS232BP+SH233BA)", "query": "TOTO CS232BP SH233BA トイレ" },
+  { "id": "qr-cs232bm-sh233ba", "name": "TOTO ピュアレストQR 床排水リモデル 手洗いあり (CS232BM+SH233BA)", "query": "TOTO CS232BM SH233BA トイレ" },
+  { "id": "amage-bcz30s-dtz380", "name": "LIXIL アメージュ便器 床排水 手洗いあり (BC-Z30S+DT-Z380)", "query": "LIXIL BC-Z30S DT-Z380 トイレ" },
+  { "id": "amage-ybcz30s-ydtz380", "name": "LIXIL アメージュ便器 床排水 手洗いあり アクアセラミック (YBC-Z30S+YDT-Z380)", "query": "LIXIL YBC-Z30S YDT-Z380 トイレ" },
+  { "id": "amage-bcz30h-dtz380h", "name": "LIXIL アメージュ便器 リトイレ 手洗いあり (BC-Z30H+DT-Z380H)", "query": "LIXIL BC-Z30H DT-Z380H トイレ" },
+  { "id": "amage-bcz30p-dtz380", "name": "LIXIL アメージュ便器 壁排水 手洗いあり (BC-Z30P+DT-Z380)", "query": "LIXIL BC-Z30P DT-Z380 トイレ" },
+  { "id": "amage-bcz30pm-dtz380pm", "name": "LIXIL アメージュ便器 壁排水155mm 手洗いあり (BC-Z30PM+DT-Z380PM)", "query": "LIXIL BC-Z30PM DT-Z380PM トイレ" }
+]
