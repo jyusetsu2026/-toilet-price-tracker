@@ -1,109 +1,655 @@
 {
-  "generated_at": "2026年08月27日 17:55 (JST)",
+  "generated_at": "2026年08月28日 16:33 (JST)",
   "results": [
     {
       "id": "zj1-cs348b-ces9151",
       "name": "TOTO ZJ1 床排水 手洗いあり (CES9151)",
       "query": "TOTO CES9151 トイレ",
-      "cheapest_top5": [],
-      "expensive_top5": [],
-      "store_count": 0
+      "cheapest_top5": [
+        {
+          "store": "パーツコム（Yahoo!）",
+          "price": 627
+        },
+        {
+          "store": "住宅設備機器のことなら住設PLUS ヤフー店（Yahoo!）",
+          "price": 61990
+        },
+        {
+          "store": "ならのき（Yahoo!）",
+          "price": 63140
+        },
+        {
+          "store": "e-キッチンマテリアル（Yahoo!）",
+          "price": 63194
+        },
+        {
+          "store": "コンパネ屋 Yahoo!ショップ（Yahoo!）",
+          "price": 63194
+        }
+      ],
+      "expensive_top5": [
+        {
+          "store": "住設ドットコム ヤフー店（Yahoo!）",
+          "price": 73480
+        },
+        {
+          "store": "リフォームの生活堂（Yahoo!）",
+          "price": 70248
+        },
+        {
+          "store": "住設と電材の洛電マート plus（Yahoo!）",
+          "price": 69800
+        },
+        {
+          "store": "住設と電材の洛電マート Yahoo!店（Yahoo!）",
+          "price": 69800
+        },
+        {
+          "store": "祐翔商店（Yahoo!）",
+          "price": 69500
+        }
+      ],
+      "store_count": 16
     },
     {
       "id": "zj1-cs348b-ces9150",
       "name": "TOTO ZJ1 床排水 手洗いなし (CES9150)",
       "query": "TOTO CES9150 トイレ",
-      "cheapest_top5": [],
-      "expensive_top5": [],
-      "store_count": 0
+      "cheapest_top5": [
+        {
+          "store": "パーツコム（Yahoo!）",
+          "price": 627
+        },
+        {
+          "store": "クラシール（Yahoo!）",
+          "price": 67500
+        },
+        {
+          "store": "家電と住宅設備のジュプロ（Yahoo!）",
+          "price": 68046
+        },
+        {
+          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
+          "price": 68046
+        },
+        {
+          "store": "萬屋ヤフー店（Yahoo!）",
+          "price": 68500
+        }
+      ],
+      "expensive_top5": [
+        {
+          "store": "ロイヤル建材通販（Yahoo!）",
+          "price": 81000
+        },
+        {
+          "store": "リフォームのピース（Yahoo!）",
+          "price": 77000
+        },
+        {
+          "store": "東鵬ストア（Yahoo!）",
+          "price": 77000
+        },
+        {
+          "store": "住設ドットコム ヤフー店（Yahoo!）",
+          "price": 72000
+        },
+        {
+          "store": "リフォームの生活堂（Yahoo!）",
+          "price": 68745
+        }
+      ],
+      "store_count": 10
     },
     {
       "id": "zr1-cs354bm-ces9155m",
       "name": "TOTO ZR1 床排水リモデル 手洗いあり (CES9155M)",
       "query": "TOTO CES9155M トイレ",
-      "cheapest_top5": [],
-      "expensive_top5": [],
-      "store_count": 0
+      "cheapest_top5": [
+        {
+          "store": "パーツコム（Yahoo!）",
+          "price": 979
+        },
+        {
+          "store": "キューブファクトリー（Yahoo!）",
+          "price": 64900
+        },
+        {
+          "store": "ならのき（Yahoo!）",
+          "price": 65000
+        },
+        {
+          "store": "Cherry Karen ヤフー店（Yahoo!）",
+          "price": 65900
+        },
+        {
+          "store": "e-キッチンマテリアル（Yahoo!）",
+          "price": 67708
+        }
+      ],
+      "expensive_top5": [
+        {
+          "store": "住設専門店（Yahoo!）",
+          "price": 135000
+        },
+        {
+          "store": "ロイヤル建材通販（Yahoo!）",
+          "price": 91000
+        },
+        {
+          "store": "東鵬ストア（Yahoo!）",
+          "price": 86000
+        },
+        {
+          "store": "リフォームのピース（Yahoo!）",
+          "price": 83030
+        },
+        {
+          "store": "住宅設備SHOP（Yahoo!）",
+          "price": 83000
+        }
+      ],
+      "store_count": 24
     },
     {
       "id": "zr1-cs354bm-ces9154m",
       "name": "TOTO ZR1 床排水リモデル 手洗いなし (CES9154M)",
       "query": "TOTO CES9154M トイレ",
-      "cheapest_top5": [],
-      "expensive_top5": [],
-      "store_count": 0
+      "cheapest_top5": [
+        {
+          "store": "パーツコム（Yahoo!）",
+          "price": 979
+        },
+        {
+          "store": "クラシール（Yahoo!）",
+          "price": 71800
+        },
+        {
+          "store": "住宅設備SHOP（Yahoo!）",
+          "price": 71800
+        },
+        {
+          "store": "萬屋ヤフー店（Yahoo!）",
+          "price": 72200
+        },
+        {
+          "store": "住設オンデマンド（Yahoo!）",
+          "price": 72200
+        }
+      ],
+      "expensive_top5": [
+        {
+          "store": "住設専門店（Yahoo!）",
+          "price": 120000
+        },
+        {
+          "store": "ロイヤル建材通販（Yahoo!）",
+          "price": 91000
+        },
+        {
+          "store": "住宅設備LINK（Yahoo!）",
+          "price": 89540
+        },
+        {
+          "store": "リフォームのピース（Yahoo!）",
+          "price": 82900
+        },
+        {
+          "store": "キューブファクトリー（Yahoo!）",
+          "price": 79200
+        }
+      ],
+      "store_count": 14
     },
     {
       "id": "qr-cs232b-sh233ba",
       "name": "TOTO ピュアレストQR 床排水 手洗いあり (CS232B+SH233BA)",
       "query": "TOTO CS232B SH233BA トイレ",
-      "cheapest_top5": [],
-      "expensive_top5": [],
-      "store_count": 0
+      "cheapest_top5": [
+        {
+          "store": "スイスイマート（Yahoo!）",
+          "price": 31700
+        },
+        {
+          "store": "住設オンデマンド（Yahoo!）",
+          "price": 39896
+        },
+        {
+          "store": "MSI（Yahoo!）",
+          "price": 45779
+        },
+        {
+          "store": "malukoh shopping（Yahoo!）",
+          "price": 45779
+        },
+        {
+          "store": "リフォームのピース（Yahoo!）",
+          "price": 45880
+        }
+      ],
+      "expensive_top5": [
+        {
+          "store": "設備プラザ 2号店（Yahoo!）",
+          "price": 56300
+        },
+        {
+          "store": "設備プラザ（Yahoo!）",
+          "price": 56300
+        },
+        {
+          "store": "住設ドットコム ヤフー店（Yahoo!）",
+          "price": 52250
+        },
+        {
+          "store": "住宅設備LINK（Yahoo!）",
+          "price": 49560
+        },
+        {
+          "store": "coordiroom ヤフー店（Yahoo!）",
+          "price": 48855
+        }
+      ],
+      "store_count": 15
     },
     {
       "id": "qr-cs232b-sh232ba",
       "name": "TOTO ピュアレストQR 床排水 手洗いなし (CS232B+SH232BA)",
       "query": "TOTO CS232B SH232BA トイレ",
-      "cheapest_top5": [],
-      "expensive_top5": [],
-      "store_count": 0
+      "cheapest_top5": [
+        {
+          "store": "スイスイマート（Yahoo!）",
+          "price": 28100
+        },
+        {
+          "store": "住設オンデマンド（Yahoo!）",
+          "price": 38770
+        },
+        {
+          "store": "yoohooヤフー店（Yahoo!）",
+          "price": 42740
+        },
+        {
+          "store": "設備TOWN（Yahoo!）",
+          "price": 42740
+        },
+        {
+          "store": "malukoh shopping（Yahoo!）",
+          "price": 42743
+        }
+      ],
+      "expensive_top5": [
+        {
+          "store": "生活雑貨 yutorito（Yahoo!）",
+          "price": 66539
+        },
+        {
+          "store": "じゅうせつひるず.com（Yahoo!）",
+          "price": 61294
+        },
+        {
+          "store": "住設コロシアム（Yahoo!）",
+          "price": 60600
+        },
+        {
+          "store": "PHショップYahoo!店（Yahoo!）",
+          "price": 58300
+        },
+        {
+          "store": "設備プラザ 2号店（Yahoo!）",
+          "price": 52980
+        }
+      ],
+      "store_count": 19
     },
     {
       "id": "qr-cs232bp-sh233ba",
       "name": "TOTO ピュアレストQR 壁排水 手洗いあり (CS232BP+SH233BA)",
       "query": "TOTO CS232BP SH233BA トイレ",
-      "cheapest_top5": [],
-      "expensive_top5": [],
-      "store_count": 0
+      "cheapest_top5": [
+        {
+          "store": "スイスイマート（Yahoo!）",
+          "price": 31700
+        },
+        {
+          "store": "リフォームの生活堂（Yahoo!）",
+          "price": 50300
+        },
+        {
+          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
+          "price": 50300
+        },
+        {
+          "store": "家電と住宅設備のジュプロ（Yahoo!）",
+          "price": 50300
+        },
+        {
+          "store": "malukoh shopping（Yahoo!）",
+          "price": 50300
+        }
+      ],
+      "expensive_top5": [
+        {
+          "store": "取替堂Yahoo!店（Yahoo!）",
+          "price": 96400
+        },
+        {
+          "store": "家電と住設のイークローバー2号店（Yahoo!）",
+          "price": 91869
+        },
+        {
+          "store": "タカラShop Yahoo!店（Yahoo!）",
+          "price": 89100
+        },
+        {
+          "store": "家電と住設のイークローバー スグクル3号店（Yahoo!）",
+          "price": 82926
+        },
+        {
+          "store": "あいあいショップさくら（Yahoo!）",
+          "price": 81301
+        }
+      ],
+      "store_count": 18
     },
     {
       "id": "qr-cs232bm-sh233ba",
       "name": "TOTO ピュアレストQR 床排水リモデル 手洗いあり (CS232BM+SH233BA)",
       "query": "TOTO CS232BM SH233BA トイレ",
-      "cheapest_top5": [],
-      "expensive_top5": [],
-      "store_count": 0
+      "cheapest_top5": [
+        {
+          "store": "スイスイマート（Yahoo!）",
+          "price": 31700
+        },
+        {
+          "store": "リフォームのピース（Yahoo!）",
+          "price": 49930
+        },
+        {
+          "store": "まいどDIY（Yahoo!）",
+          "price": 52958
+        },
+        {
+          "store": "coordiroom ヤフー店（Yahoo!）",
+          "price": 52958
+        },
+        {
+          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
+          "price": 52959
+        }
+      ],
+      "expensive_top5": [
+        {
+          "store": "家電と住設のイークローバー（Yahoo!）",
+          "price": 82483
+        },
+        {
+          "store": "じゅうせつひるず.com（Yahoo!）",
+          "price": 80381
+        },
+        {
+          "store": "生活雑貨 yutorito（Yahoo!）",
+          "price": 78133
+        },
+        {
+          "store": "住設コロシアム（Yahoo!）",
+          "price": 71500
+        },
+        {
+          "store": "住設倶楽部（Yahoo!）",
+          "price": 70831
+        }
+      ],
+      "store_count": 17
     },
     {
       "id": "amage-bcz30s-dtz380",
       "name": "LIXIL アメージュ便器 床排水 手洗いあり (BC-Z30S+DT-Z380)",
       "query": "LIXIL BC-Z30S DT-Z380 トイレ",
-      "cheapest_top5": [],
-      "expensive_top5": [],
-      "store_count": 0
+      "cheapest_top5": [
+        {
+          "store": "あいあいショップさくら（Yahoo!）",
+          "price": 39200
+        },
+        {
+          "store": "家電と住設のイークローバー（Yahoo!）",
+          "price": 39200
+        },
+        {
+          "store": "家電と住設のイークローバー スグクル3号店（Yahoo!）",
+          "price": 39984
+        },
+        {
+          "store": "みずらいふ（Yahoo!）",
+          "price": 40505
+        },
+        {
+          "store": "住設ショッピング（Yahoo!）",
+          "price": 41425
+        }
+      ],
+      "expensive_top5": [
+        {
+          "store": "ハイカラン屋（Yahoo!）",
+          "price": 45925
+        },
+        {
+          "store": "家電と住設のイークローバー2号店（Yahoo!）",
+          "price": 44296
+        },
+        {
+          "store": "リフォームの生活堂（Yahoo!）",
+          "price": 44236
+        },
+        {
+          "store": "家電と住宅設備のジュプロ（Yahoo!）",
+          "price": 43751
+        },
+        {
+          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
+          "price": 43751
+        }
+      ],
+      "store_count": 11
     },
     {
       "id": "amage-ybcz30s-ydtz380",
       "name": "LIXIL アメージュ便器 床排水 手洗いあり アクアセラミック (YBC-Z30S+YDT-Z380)",
       "query": "LIXIL YBC-Z30S YDT-Z380 トイレ",
-      "cheapest_top5": [],
-      "expensive_top5": [],
-      "store_count": 0
+      "cheapest_top5": [
+        {
+          "store": "あいあいショップさくら（Yahoo!）",
+          "price": 42500
+        },
+        {
+          "store": "家電と住設のイークローバー（Yahoo!）",
+          "price": 42500
+        },
+        {
+          "store": "家電と住設のイークローバー スグクル3号店（Yahoo!）",
+          "price": 43350
+        },
+        {
+          "store": "クラシール（Yahoo!）",
+          "price": 46046
+        },
+        {
+          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
+          "price": 46921
+        }
+      ],
+      "expensive_top5": [
+        {
+          "store": "住設ショッピング（Yahoo!）",
+          "price": 49225
+        },
+        {
+          "store": "ハイカラン屋（Yahoo!）",
+          "price": 49225
+        },
+        {
+          "store": "みずらいふ（Yahoo!）",
+          "price": 49225
+        },
+        {
+          "store": "家電と住設のイークローバー2号店（Yahoo!）",
+          "price": 48025
+        },
+        {
+          "store": "リフォームの生活堂（Yahoo!）",
+          "price": 47443
+        }
+      ],
+      "store_count": 11
     },
     {
       "id": "amage-bcz30h-dtz380h",
       "name": "LIXIL アメージュ便器 リトイレ 手洗いあり (BC-Z30H+DT-Z380H)",
       "query": "LIXIL BC-Z30H DT-Z380H トイレ",
-      "cheapest_top5": [],
-      "expensive_top5": [],
-      "store_count": 0
+      "cheapest_top5": [
+        {
+          "store": "住設倶楽部（Yahoo!）",
+          "price": 38885
+        },
+        {
+          "store": "ダンドリープロYahoo!店（Yahoo!）",
+          "price": 44305
+        },
+        {
+          "store": "malukoh shopping（Yahoo!）",
+          "price": 44306
+        },
+        {
+          "store": "まいどDIY（Yahoo!）",
+          "price": 44770
+        },
+        {
+          "store": "coordiroom ヤフー店（Yahoo!）",
+          "price": 44770
+        }
+      ],
+      "expensive_top5": [
+        {
+          "store": "住設コロシアム（Yahoo!）",
+          "price": 47500
+        },
+        {
+          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
+          "price": 47495
+        },
+        {
+          "store": "家電と住宅設備のジュプロ（Yahoo!）",
+          "price": 47495
+        },
+        {
+          "store": "家電と住設のイークローバー（Yahoo!）",
+          "price": 46662
+        },
+        {
+          "store": "あいあいショップさくら（Yahoo!）",
+          "price": 46662
+        }
+      ],
+      "store_count": 18
     },
     {
       "id": "amage-bcz30p-dtz380",
       "name": "LIXIL アメージュ便器 壁排水 手洗いあり (BC-Z30P+DT-Z380)",
       "query": "LIXIL BC-Z30P DT-Z380 トイレ",
-      "cheapest_top5": [],
-      "expensive_top5": [],
-      "store_count": 0
+      "cheapest_top5": [
+        {
+          "store": "リフォームの生活堂（Yahoo!）",
+          "price": 46090
+        },
+        {
+          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
+          "price": 46090
+        },
+        {
+          "store": "家電と住宅設備のジュプロ（Yahoo!）",
+          "price": 46090
+        },
+        {
+          "store": "あいあいショップさくら（Yahoo!）",
+          "price": 46090
+        },
+        {
+          "store": "家電と住設のイークローバー（Yahoo!）",
+          "price": 46090
+        }
+      ],
+      "expensive_top5": [
+        {
+          "store": "住設ドットコム ヤフー店（Yahoo!）",
+          "price": 53730
+        },
+        {
+          "store": "住設ショッピング（Yahoo!）",
+          "price": 52978
+        },
+        {
+          "store": "みずらいふ（Yahoo!）",
+          "price": 52978
+        },
+        {
+          "store": "ハイカラン屋（Yahoo!）",
+          "price": 52978
+        },
+        {
+          "store": "家電と住設のイークローバー2号店（Yahoo!）",
+          "price": 52082
+        }
+      ],
+      "store_count": 11
     },
     {
       "id": "amage-bcz30pm-dtz380pm",
       "name": "LIXIL アメージュ便器 壁排水155mm 手洗いあり (BC-Z30PM+DT-Z380PM)",
       "query": "LIXIL BC-Z30PM DT-Z380PM トイレ",
-      "cheapest_top5": [],
-      "expensive_top5": [],
-      "store_count": 0
+      "cheapest_top5": [
+        {
+          "store": "住宅設備SHOP（Yahoo!）",
+          "price": 45000
+        },
+        {
+          "store": "malukoh shopping（Yahoo!）",
+          "price": 45000
+        },
+        {
+          "store": "家電と住宅設備のジュプロ（Yahoo!）",
+          "price": 45015
+        },
+        {
+          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
+          "price": 45015
+        },
+        {
+          "store": "家電と住設のイークローバー（Yahoo!）",
+          "price": 45458
+        }
+      ],
+      "expensive_top5": [
+        {
+          "store": "タカラPRO（Yahoo!）",
+          "price": 68105
+        },
+        {
+          "store": "タカラShop Yahoo!店（Yahoo!）",
+          "price": 68105
+        },
+        {
+          "store": "設備プラザ（Yahoo!）",
+          "price": 57980
+        },
+        {
+          "store": "設備プラザ 2号店（Yahoo!）",
+          "price": 57980
+        },
+        {
+          "store": "住設ドットコム ヤフー店（Yahoo!）",
+          "price": 54502
+        }
+      ],
+      "store_count": 17
     }
   ]
 }
