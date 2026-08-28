@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026年08月28日 16:48 (JST)",
+  "generated_at": "2026年08月29日 06:52 (JST)",
   "results": [
     {
       "id": "zj1-cs348b-ces9151",
@@ -17,14 +17,14 @@
           "url": "https://store.shopping.yahoo.co.jp/naranoki/to074.html"
         },
         {
-          "store": "e-キッチンマテリアル（Yahoo!）",
-          "price": 63194,
-          "url": "https://store.shopping.yahoo.co.jp/e-kitchenmaterial/ces9161nw1.html"
-        },
-        {
           "store": "コンパネ屋 Yahoo!ショップ（Yahoo!）",
           "price": 63194,
           "url": "https://store.shopping.yahoo.co.jp/conpaneya/ces9161nw1.html"
+        },
+        {
+          "store": "e-キッチンマテリアル（Yahoo!）",
+          "price": 63194,
+          "url": "https://store.shopping.yahoo.co.jp/e-kitchenmaterial/ces9161nw1.html"
         },
         {
           "store": "萬屋ヤフー店（Yahoo!）",
@@ -41,22 +41,22 @@
         {
           "store": "リフォームの生活堂（Yahoo!）",
           "price": 70248,
-          "url": "https://store.shopping.yahoo.co.jp/seikatsudo/ces9151p-nw1.html"
-        },
-        {
-          "store": "住設と電材の洛電マート plus（Yahoo!）",
-          "price": 69800,
-          "url": "https://store.shopping.yahoo.co.jp/rakurakumarket/ces967-nw1.html"
-        },
-        {
-          "store": "住設と電材の洛電マート Yahoo!店（Yahoo!）",
-          "price": 69800,
-          "url": "https://store.shopping.yahoo.co.jp/rakudenmart/ces967-nw1.html"
+          "url": "https://store.shopping.yahoo.co.jp/seikatsudo/ces9151-nw1.html"
         },
         {
           "store": "祐翔商店（Yahoo!）",
           "price": 69500,
           "url": "https://store.shopping.yahoo.co.jp/yuusyoustore/toto-ces9151.html"
+        },
+        {
+          "store": "家電と住宅設備のジュプロ（Yahoo!）",
+          "price": 69473,
+          "url": "https://store.shopping.yahoo.co.jp/y-jyupro/ces9151p-nw1.html"
+        },
+        {
+          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
+          "price": 69473,
+          "url": "https://store.shopping.yahoo.co.jp/torikae-com/ces9151-nw1.html"
         }
       ],
       "store_count": 15
@@ -68,8 +68,18 @@
       "cheapest_top5": [
         {
           "store": "クラシール（Yahoo!）",
-          "price": 67500,
+          "price": 66688,
           "url": "https://store.shopping.yahoo.co.jp/craseal/jko-ces9150-nw1.html"
+        },
+        {
+          "store": "住設と電材の洛電マート Yahoo!店（Yahoo!）",
+          "price": 66688,
+          "url": "https://store.shopping.yahoo.co.jp/rakudenmart/ces9160-nw1.html"
+        },
+        {
+          "store": "住設と電材の洛電マート plus（Yahoo!）",
+          "price": 66688,
+          "url": "https://store.shopping.yahoo.co.jp/rakurakumarket/ces9160-nw1.html"
         },
         {
           "store": "家電と住宅設備のジュプロ（Yahoo!）",
@@ -80,16 +90,6 @@
           "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
           "price": 68046,
           "url": "https://store.shopping.yahoo.co.jp/torikae-com/ces9150-nw1.html"
-        },
-        {
-          "store": "萬屋ヤフー店（Yahoo!）",
-          "price": 68500,
-          "url": "https://store.shopping.yahoo.co.jp/yorozuyaa/yorozu-k1168.html"
-        },
-        {
-          "store": "リフォームの生活堂（Yahoo!）",
-          "price": 68745,
-          "url": "https://store.shopping.yahoo.co.jp/seikatsudo/ces9150p-nw1.html"
         }
       ],
       "expensive_top5": [
@@ -119,7 +119,7 @@
           "url": "https://store.shopping.yahoo.co.jp/seikatsudo/ces9150p-nw1.html"
         }
       ],
-      "store_count": 9
+      "store_count": 11
     },
     {
       "id": "zr1-cs354bm-ces9155m",
@@ -142,14 +142,14 @@
           "url": "https://store.shopping.yahoo.co.jp/cherry-karen/298.html"
         },
         {
-          "store": "e-キッチンマテリアル（Yahoo!）",
-          "price": 67708,
-          "url": "https://store.shopping.yahoo.co.jp/e-kitchenmaterial/ces9155m-nw1.html"
-        },
-        {
           "store": "コンパネ屋 Yahoo!ショップ（Yahoo!）",
           "price": 67708,
           "url": "https://store.shopping.yahoo.co.jp/conpaneya/ces9155m-nw1.html"
+        },
+        {
+          "store": "e-キッチンマテリアル（Yahoo!）",
+          "price": 67708,
+          "url": "https://store.shopping.yahoo.co.jp/e-kitchenmaterial/ces9155m-nw1.html"
         }
       ],
       "expensive_top5": [
@@ -207,9 +207,9 @@
           "url": "https://store.shopping.yahoo.co.jp/juuon/ces9154m-.html"
         },
         {
-          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
+          "store": "家電と住宅設備のジュプロ（Yahoo!）",
           "price": 72561,
-          "url": "https://store.shopping.yahoo.co.jp/torikae-com/ces9154m-nw1.html"
+          "url": "https://store.shopping.yahoo.co.jp/y-jyupro/ces9154m-nw1.html"
         }
       ],
       "expensive_top5": [
@@ -231,7 +231,7 @@
         {
           "store": "リフォームのピース（Yahoo!）",
           "price": 82900,
-          "url": "https://store.shopping.yahoo.co.jp/reform-peace/10072729.html"
+          "url": "https://store.shopping.yahoo.co.jp/reform-peace/10072728.html"
         },
         {
           "store": "キューブファクトリー（Yahoo!）",
@@ -329,7 +329,7 @@
         {
           "store": "malukoh shopping（Yahoo!）",
           "price": 42743,
-          "url": "https://store.shopping.yahoo.co.jp/malukoh/cs232ba-sh232ba-nw1.html"
+          "url": "https://store.shopping.yahoo.co.jp/malukoh/cs232b-sh232ba-sc1.html"
         }
       ],
       "expensive_top5": [
@@ -389,7 +389,7 @@
         {
           "store": "malukoh shopping（Yahoo!）",
           "price": 50300,
-          "url": "https://store.shopping.yahoo.co.jp/malukoh/-cs232bp-sh233ba-sc1.html"
+          "url": "https://store.shopping.yahoo.co.jp/malukoh/cs232bp-sh233ba.html"
         }
       ],
       "expensive_top5": [
@@ -437,19 +437,19 @@
           "url": "https://store.shopping.yahoo.co.jp/reform-peace/10002226-asu.html"
         },
         {
-          "store": "まいどDIY（Yahoo!）",
-          "price": 52958,
-          "url": "https://store.shopping.yahoo.co.jp/maido-diy-reform/cs232bm-sh233ba-nw1.html"
+          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
+          "price": 52936,
+          "url": "https://store.shopping.yahoo.co.jp/torikae-com/cs232bm--sh233ba-sc1.html"
+        },
+        {
+          "store": "家電と住宅設備のジュプロ（Yahoo!）",
+          "price": 52936,
+          "url": "https://store.shopping.yahoo.co.jp/y-jyupro/cs232bm--sh233ba-sc1.html"
         },
         {
           "store": "coordiroom ヤフー店（Yahoo!）",
           "price": 52958,
           "url": "https://store.shopping.yahoo.co.jp/coordiroom/cs232bm-sh233ba-nw1.html"
-        },
-        {
-          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
-          "price": 52959,
-          "url": "https://store.shopping.yahoo.co.jp/torikae-com/cs232bm--sh233ba-sc1.html"
         }
       ],
       "expensive_top5": [
@@ -499,7 +499,7 @@
         {
           "store": "家電と住設のイークローバー スグクル3号店（Yahoo!）",
           "price": 39984,
-          "url": "https://store.shopping.yahoo.co.jp/clover5678/inax220315-008-000023-q-bn8-za.html"
+          "url": "https://store.shopping.yahoo.co.jp/clover5678/inax220315-008-000023-q-bn8-kt.html"
         },
         {
           "store": "みずらいふ（Yahoo!）",
@@ -554,12 +554,12 @@
         {
           "store": "家電と住設のイークローバー（Yahoo!）",
           "price": 42500,
-          "url": "https://store.shopping.yahoo.co.jp/clover8888/inax220315-008-000019-q-bw1-za.html"
+          "url": "https://store.shopping.yahoo.co.jp/clover8888/inax220315-008-000019-q-bw1-kt.html"
         },
         {
           "store": "家電と住設のイークローバー スグクル3号店（Yahoo!）",
           "price": 43350,
-          "url": "https://store.shopping.yahoo.co.jp/clover5678/inax220315-008-000019-q-bw1-kt.html"
+          "url": "https://store.shopping.yahoo.co.jp/clover5678/inax220315-008-000019-q-bw1-za.html"
         },
         {
           "store": "クラシール（Yahoo!）",
@@ -568,7 +568,7 @@
         },
         {
           "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
-          "price": 46921,
+          "price": 46988,
           "url": "https://store.shopping.yahoo.co.jp/torikae-com/ybc-z30s--ydt-z380-bw1.html"
         }
       ],
@@ -576,7 +576,7 @@
         {
           "store": "住設ショッピング（Yahoo!）",
           "price": 49225,
-          "url": "https://store.shopping.yahoo.co.jp/jusetsu-shop/inax-ybc-z30s-ydt-z380-bn8.html"
+          "url": "https://store.shopping.yahoo.co.jp/jusetsu-shop/inax-ybc-z30s-ydt-z380-bw1.html"
         },
         {
           "store": "ハイカラン屋（Yahoo!）",
@@ -586,16 +586,16 @@
         {
           "store": "みずらいふ（Yahoo!）",
           "price": 49225,
-          "url": "https://store.shopping.yahoo.co.jp/all-kakudai/inax-ybc-z30s-ydt-z380-bn8.html"
+          "url": "https://store.shopping.yahoo.co.jp/all-kakudai/inax-ybc-z30s-ydt-z380-bw1.html"
         },
         {
           "store": "家電と住設のイークローバー2号店（Yahoo!）",
           "price": 48025,
-          "url": "https://store.shopping.yahoo.co.jp/clover-9608/inax220315-008-000019-q-bw1-kt.html"
+          "url": "https://store.shopping.yahoo.co.jp/clover-9608/inax220315-008-000019-q-bw1-za.html"
         },
         {
           "store": "リフォームの生活堂（Yahoo!）",
-          "price": 47443,
+          "price": 47511,
           "url": "https://store.shopping.yahoo.co.jp/seikatsudo/ybc-z30s--ydt-z380-bw1.html"
         }
       ],
@@ -639,14 +639,14 @@
           "url": "https://store.shopping.yahoo.co.jp/colo0703/bc-z30h-dt-z380h.html"
         },
         {
-          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
-          "price": 47495,
-          "url": "https://store.shopping.yahoo.co.jp/torikae-com/bc-z30h--dt-z380h-bn8.html"
-        },
-        {
           "store": "家電と住宅設備のジュプロ（Yahoo!）",
           "price": 47495,
           "url": "https://store.shopping.yahoo.co.jp/y-jyupro/bc-z30h--dt-z380h-bn8.html"
+        },
+        {
+          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
+          "price": 47495,
+          "url": "https://store.shopping.yahoo.co.jp/torikae-com/bc-z30h--dt-z380h-bn8.html"
         },
         {
           "store": "家電と住設のイークローバー（Yahoo!）",
@@ -674,22 +674,22 @@
         {
           "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
           "price": 46090,
-          "url": "https://store.shopping.yahoo.co.jp/torikae-com/bc-z30p--dt-z380-bw1.html"
+          "url": "https://store.shopping.yahoo.co.jp/torikae-com/bc-z30p--dt-z380-bn8.html"
         },
         {
           "store": "家電と住宅設備のジュプロ（Yahoo!）",
           "price": 46090,
-          "url": "https://store.shopping.yahoo.co.jp/y-jyupro/bc-z30p--dt-z380-bn8.html"
-        },
-        {
-          "store": "あいあいショップさくら（Yahoo!）",
-          "price": 46090,
-          "url": "https://store.shopping.yahoo.co.jp/iisakura39/inax220315-008-000054-q-bn8-tori.html"
+          "url": "https://store.shopping.yahoo.co.jp/y-jyupro/bc-z30p--dt-z380-bw1.html"
         },
         {
           "store": "家電と住設のイークローバー（Yahoo!）",
           "price": 46090,
           "url": "https://store.shopping.yahoo.co.jp/clover8888/inax220315-008-000054-q-bn8-tori.html"
+        },
+        {
+          "store": "あいあいショップさくら（Yahoo!）",
+          "price": 46090,
+          "url": "https://store.shopping.yahoo.co.jp/iisakura39/inax220315-008-000054-q-bn8-tori.html"
         }
       ],
       "expensive_top5": [
@@ -699,19 +699,19 @@
           "url": "https://store.shopping.yahoo.co.jp/jyusetu/bc-z30p-plana-bw1.html"
         },
         {
-          "store": "住設ショッピング（Yahoo!）",
-          "price": 52978,
-          "url": "https://store.shopping.yahoo.co.jp/jusetsu-shop/inax-bc-z30p-dt-z380-bn8.html"
-        },
-        {
           "store": "みずらいふ（Yahoo!）",
           "price": 52978,
           "url": "https://store.shopping.yahoo.co.jp/all-kakudai/inax-bc-z30p-dt-z380-bn8.html"
         },
         {
+          "store": "住設ショッピング（Yahoo!）",
+          "price": 52978,
+          "url": "https://store.shopping.yahoo.co.jp/jusetsu-shop/inax-bc-z30p-dt-z380-bn8.html"
+        },
+        {
           "store": "ハイカラン屋（Yahoo!）",
           "price": 52978,
-          "url": "https://store.shopping.yahoo.co.jp/water-space/inax-bc-z30p-dt-z380-bn8.html"
+          "url": "https://store.shopping.yahoo.co.jp/water-space/inax-bc-z30p-dt-z380-bw1.html"
         },
         {
           "store": "家電と住設のイークローバー2号店（Yahoo!）",
@@ -737,14 +737,14 @@
           "url": "https://store.shopping.yahoo.co.jp/malukoh/bc-z30pm-dt-z380pm-bw1.html"
         },
         {
-          "store": "家電と住宅設備のジュプロ（Yahoo!）",
-          "price": 45015,
-          "url": "https://store.shopping.yahoo.co.jp/y-jyupro/bc-z30pm--dt-z380pm-bw1.html"
+          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
+          "price": 45012,
+          "url": "https://store.shopping.yahoo.co.jp/torikae-com/bc-z30pm--dt-z380pm-bw1.html"
         },
         {
-          "store": "家電と住宅設備の取替ドットコム（Yahoo!）",
-          "price": 45015,
-          "url": "https://store.shopping.yahoo.co.jp/torikae-com/bc-z30pm--dt-z380pm-bw1.html"
+          "store": "家電と住宅設備のジュプロ（Yahoo!）",
+          "price": 45012,
+          "url": "https://store.shopping.yahoo.co.jp/y-jyupro/bc-z30pm--dt-z380pm-bw1.html"
         },
         {
           "store": "家電と住設のイークローバー（Yahoo!）",
@@ -754,14 +754,14 @@
       ],
       "expensive_top5": [
         {
-          "store": "タカラPRO（Yahoo!）",
-          "price": 68105,
-          "url": "https://store.shopping.yahoo.co.jp/takarapro/amageb-mhy-a.html"
-        },
-        {
           "store": "タカラShop Yahoo!店（Yahoo!）",
           "price": 68105,
           "url": "https://store.shopping.yahoo.co.jp/tss/amageb-mhy-a.html"
+        },
+        {
+          "store": "タカラPRO（Yahoo!）",
+          "price": 68105,
+          "url": "https://store.shopping.yahoo.co.jp/takarapro/amageb-mhy-a.html"
         },
         {
           "store": "設備プラザ（Yahoo!）",
