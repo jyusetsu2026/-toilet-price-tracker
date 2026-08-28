@@ -6,25 +6,28 @@ scrape_prices.py
 products.json に書かれたトイレ商品ごとに、
   ・楽天市場 商品検索API
   ・Yahoo!ショッピング 商品検索API
-の2つの公式APIを使って「店舗名」と「価格」の組み合わせを集めます。
-
-（以前はWebページを機械的に読み取る方式でしたが、検索サイト側にブロックされて
-価格が全く取得できなくなったため、各モールが公式に提供している無料APIを
-使う方式に変更しました。）
+の2つの公式APIを使って「店舗名」「価格」「商品ページのURL」の組み合わせを集めます。
 
 商品ごとに
-  ・安い順トップ5（店舗名つき）
-  ・高い順トップ5（店舗名つき）
+  ・安い順トップ5（店舗名つき・リンクあり）
+  ・高い順トップ5（店舗名つき・リンクあり）
 を作り、docs/index.html と docs/report.json に書き出します。
 
 ■ 必要な準備
   GitHub の Settings → Secrets and variables → Actions で、以下の2つを
-  登録しておく必要があります（詳しくはマニュアル参照）。
+  登録しておく必要があります。
     - RAKUTEN_APP_ID   … 楽天ウェブサービスで発行したApplication ID
     - YAHOO_CLIENT_ID  … Yahoo!デベロッパーネットワークで発行したClient ID
 
   どちらか片方しか登録していない場合、そのモールの分だけスキップして
   もう片方のモールの結果だけで集計します（エラーにはなりません）。
+
+■ 価格のノイズ除外について
+  検索結果には、商品本体ではなく補修用の部品（パッキン・ボルトなど）が
+  数百円〜数千円で混ざることがあります。これを本体価格と誤って集計しない
+  よう、MIN_PRICE 円未満の結果は除外しています。トイレ本体はどれも
+  数万円以上するため、10,000円を下限にしています。必要に応じて
+  下の MIN_PRICE の値を調整してください。
 
 GitHub Actions から毎日10時(日本時間)に自動実行される想定です。
 """
@@ -53,9 +56,14 @@ YAHOO_URL = "https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch"
 
 HEADERS = {"User-Agent": "toilet-price-tracker/1.0"}
 
+# トイレ本体としてありえない価格帯（部品・付属品・入力ミス等）を除外するための範囲。
+# 商品によって相場が違う場合は、この値を調整してください。
+MIN_PRICE = 10000
+MAX_PRICE = 500000
+
 
 def fetch_rakuten(query: str, hits: int = 30):
-    """楽天市場 商品検索APIから (店舗名, 価格) のリストを取得する。"""
+    """楽天市場 商品検索APIから (店舗名, 価格, URL) のリストを取得する。"""
     if not RAKUTEN_APP_ID:
         return []
 
@@ -79,13 +87,17 @@ def fetch_rakuten(query: str, hits: int = 30):
         item = entry.get("Item", {})
         shop_name = item.get("shopName")
         price = item.get("itemPrice")
-        if shop_name and isinstance(price, int):
-            results.append({"store": f"{shop_name}（楽天）", "price": price})
+        item_url = item.get("itemUrl")
+        if not shop_name or not isinstance(price, int):
+            continue
+        if not (MIN_PRICE <= price <= MAX_PRICE):
+            continue  # 部品・付属品などのノイズを除外
+        results.append({"store": f"{shop_name}（楽天）", "price": price, "url": item_url})
     return results
 
 
 def fetch_yahoo(query: str, results_count: int = 30):
-    """Yahoo!ショッピング 商品検索APIから (店舗名, 価格) のリストを取得する。"""
+    """Yahoo!ショッピング 商品検索APIから (店舗名, 価格, URL) のリストを取得する。"""
     if not YAHOO_CLIENT_ID:
         return []
 
@@ -108,23 +120,27 @@ def fetch_yahoo(query: str, results_count: int = 30):
         seller = hit.get("seller", {})
         shop_name = seller.get("name")
         price = hit.get("price")
-        if shop_name and isinstance(price, int):
-            results.append({"store": f"{shop_name}（Yahoo!）", "price": price})
+        item_url = hit.get("url")
+        if not shop_name or not isinstance(price, int):
+            continue
+        if not (MIN_PRICE <= price <= MAX_PRICE):
+            continue  # 部品・付属品などのノイズを除外
+        results.append({"store": f"{shop_name}（Yahoo!）", "price": price, "url": item_url})
     return results
 
 
 def fetch_store_prices(query: str):
-    """楽天とYahoo!の両方から集めた (店舗名, 価格) のリストを返す（店舗ごとに最安値のみ）。"""
+    """楽天とYahoo!の両方から集めた (店舗名, 価格, URL) のリストを返す（店舗ごとに最安値のみ）。"""
     combined = fetch_rakuten(query) + fetch_yahoo(query)
 
     cheapest_per_store = {}
     for entry in combined:
         store = entry["store"]
         price = entry["price"]
-        if store not in cheapest_per_store or price < cheapest_per_store[store]:
-            cheapest_per_store[store] = price
+        if store not in cheapest_per_store or price < cheapest_per_store[store]["price"]:
+            cheapest_per_store[store] = entry
 
-    return [{"store": s, "price": p} for s, p in cheapest_per_store.items()]
+    return list(cheapest_per_store.values())
 
 
 def build_report(products):
@@ -172,13 +188,20 @@ def build_report(products):
 
 
 def render_html(results, generated_at: str) -> str:
+    def store_cell(r):
+        name = r["store"]
+        url = r.get("url")
+        if url:
+            return f'<a href="{url}" target="_blank" rel="noopener noreferrer">{name}</a>'
+        return name
+
     def rows(items):
         if not items:
             return "<tr><td colspan='3' class='empty'>店舗情報が見つかりませんでした</td></tr>"
         out = []
         for i, r in enumerate(items, start=1):
             out.append(
-                f"<tr><td>{i}</td><td>{r['store']}</td>"
+                f"<tr><td>{i}</td><td>{store_cell(r)}</td>"
                 f"<td class='price'>{r['price']:,}円</td></tr>"
             )
         return "\n".join(out)
@@ -228,6 +251,8 @@ def render_html(results, generated_at: str) -> str:
   table {{ width:100%; border-collapse: collapse; font-size:13px; }}
   th, td {{ text-align:left; padding:6px; border-bottom:1px solid #eee; }}
   th {{ color:#888; font-weight:normal; }}
+  td a {{ color:#2471a3; text-decoration:none; }}
+  td a:hover {{ text-decoration:underline; }}
   .price {{ font-weight:bold; text-align:right; }}
   .empty {{ color:#aaa; text-align:center; padding:14px 0; }}
 </style>
