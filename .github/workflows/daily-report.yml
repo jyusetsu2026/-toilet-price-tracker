@@ -27,6 +27,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: 価格を調査してレポートを作成
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          YAHOO_CLIENT_ID: ${{ secrets.YAHOO_CLIENT_ID }}
         run: python scrape_prices.py
 
       - name: 更新内容をコミットしてプッシュ
