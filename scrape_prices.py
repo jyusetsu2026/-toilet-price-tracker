@@ -3,26 +3,39 @@
 """
 scrape_prices.py
 -----------------
-products.json に書かれたトイレ商品ごとに、Yahoo!ショッピングの検索結果から
-「店舗名」と「価格」の組み合わせを集めます。
+products.json に書かれたトイレ商品ごとに、
+  ・楽天市場 商品検索API
+  ・Yahoo!ショッピング 商品検索API
+の2つの公式APIを使って「店舗名」と「価格」の組み合わせを集めます。
+
+（以前はWebページを機械的に読み取る方式でしたが、検索サイト側にブロックされて
+価格が全く取得できなくなったため、各モールが公式に提供している無料APIを
+使う方式に変更しました。）
 
 商品ごとに
   ・安い順トップ5（店舗名つき）
   ・高い順トップ5（店舗名つき）
 を作り、docs/index.html と docs/report.json に書き出します。
 
+■ 必要な準備
+  GitHub の Settings → Secrets and variables → Actions で、以下の2つを
+  登録しておく必要があります（詳しくはマニュアル参照）。
+    - RAKUTEN_APP_ID   … 楽天ウェブサービスで発行したApplication ID
+    - YAHOO_CLIENT_ID  … Yahoo!デベロッパーネットワークで発行したClient ID
+
+  どちらか片方しか登録していない場合、そのモールの分だけスキップして
+  もう片方のモールの結果だけで集計します（エラーにはなりません）。
+
 GitHub Actions から毎日10時(日本時間)に自動実行される想定です。
-詳しい使い方は README.md とマニュアルを参照してください。
 """
 
 import json
-import re
+import os
 import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 import requests
-from bs4 import BeautifulSoup
 
 BASE_DIR = Path(__file__).resolve().parent
 PRODUCTS_FILE = BASE_DIR / "products.json"
@@ -30,87 +43,100 @@ DOCS_DIR = BASE_DIR / "docs"
 REPORT_JSON = DOCS_DIR / "report.json"
 INDEX_HTML = DOCS_DIR / "index.html"
 
-SEARCH_URL = "https://shopping.yahoo.co.jp/search"
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0 Safari/537.36"
-    )
-}
-
 JST = timezone(timedelta(hours=9))
-PRICE_PATTERN = re.compile(r"([0-9]{1,3}(?:,[0-9]{3})+|[0-9]{4,7})\s*円")
-STORE_LINK_PATTERN = re.compile(r"/store/")
+
+RAKUTEN_APP_ID = os.environ.get("RAKUTEN_APP_ID", "").strip()
+YAHOO_CLIENT_ID = os.environ.get("YAHOO_CLIENT_ID", "").strip()
+
+RAKUTEN_URL = "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601"
+YAHOO_URL = "https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch"
+
+HEADERS = {"User-Agent": "toilet-price-tracker/1.0"}
 
 
-def fetch_store_prices(query: str, max_items: int = 15):
-    """
-    指定したキーワードで検索し、「店舗名」と「価格」の組み合わせのリストを返す。
-
-    Yahoo!ショッピングの検索結果ページには、同じ商品を複数の店舗が
-    出品していることが多いため、価格の近くにある店舗リンクを手がかりに
-    店舗名を拾う。サイトのHTML構造が変わると取得できなくなることがある。
-    """
-    params = {"p": query}
-    try:
-        res = requests.get(SEARCH_URL, params=params, headers=HEADERS, timeout=15)
-        res.raise_for_status()
-    except requests.RequestException as exc:
-        print(f"  [警告] 検索に失敗しました: {query} ({exc})")
+def fetch_rakuten(query: str, hits: int = 30):
+    """楽天市場 商品検索APIから (店舗名, 価格) のリストを取得する。"""
+    if not RAKUTEN_APP_ID:
         return []
 
-    soup = BeautifulSoup(res.text, "html.parser")
-    found = []
-    seen_stores = {}
+    params = {
+        "applicationId": RAKUTEN_APP_ID,
+        "keyword": query,
+        "hits": hits,
+        "sort": "+itemPrice",  # 安い順
+        "format": "json",
+    }
+    try:
+        res = requests.get(RAKUTEN_URL, params=params, headers=HEADERS, timeout=15)
+        res.raise_for_status()
+        data = res.json()
+    except (requests.RequestException, ValueError) as exc:
+        print(f"  [警告] 楽天APIの取得に失敗しました: {query} ({exc})")
+        return []
 
-    # ページ内の「◯◯円」というテキストを1つずつたどり、
-    # その近くの祖先要素から店舗リンク（/store/を含むリンク）を探す。
-    for text_node in soup.find_all(string=PRICE_PATTERN):
-        match = PRICE_PATTERN.search(text_node)
-        if not match:
-            continue
-        raw = match.group(1).replace(",", "")
-        try:
-            price = int(raw)
-        except ValueError:
-            continue
-        if not (5000 <= price <= 500000):
-            continue
+    results = []
+    for entry in data.get("Items", []):
+        item = entry.get("Item", {})
+        shop_name = item.get("shopName")
+        price = item.get("itemPrice")
+        if shop_name and isinstance(price, int):
+            results.append({"store": f"{shop_name}（楽天）", "price": price})
+    return results
 
-        store_name = None
-        container = text_node.parent
-        for _ in range(6):  # 直近の祖先要素をさかのぼって店舗リンクを探す
-            if container is None:
-                break
-            store_link = container.find("a", href=STORE_LINK_PATTERN)
-            if store_link and store_link.get_text(strip=True):
-                store_name = store_link.get_text(strip=True)
-                break
-            container = container.parent
 
-        if not store_name:
-            continue
+def fetch_yahoo(query: str, results_count: int = 30):
+    """Yahoo!ショッピング 商品検索APIから (店舗名, 価格) のリストを取得する。"""
+    if not YAHOO_CLIENT_ID:
+        return []
 
-        # 同じ店舗が複数ヒットした場合は、一番安い価格だけを残す
-        if store_name not in seen_stores or price < seen_stores[store_name]:
-            seen_stores[store_name] = price
+    params = {
+        "appid": YAHOO_CLIENT_ID,
+        "query": query,
+        "results": results_count,
+        "sort": "+price",  # 安い順
+    }
+    try:
+        res = requests.get(YAHOO_URL, params=params, headers=HEADERS, timeout=15)
+        res.raise_for_status()
+        data = res.json()
+    except (requests.RequestException, ValueError) as exc:
+        print(f"  [警告] Yahoo!APIの取得に失敗しました: {query} ({exc})")
+        return []
 
-        if len(seen_stores) >= max_items:
-            break
+    results = []
+    for hit in data.get("hits", []):
+        seller = hit.get("seller", {})
+        shop_name = seller.get("name")
+        price = hit.get("price")
+        if shop_name and isinstance(price, int):
+            results.append({"store": f"{shop_name}（Yahoo!）", "price": price})
+    return results
 
-    for store_name, price in seen_stores.items():
-        found.append({"store": store_name, "price": price})
 
-    return found
+def fetch_store_prices(query: str):
+    """楽天とYahoo!の両方から集めた (店舗名, 価格) のリストを返す（店舗ごとに最安値のみ）。"""
+    combined = fetch_rakuten(query) + fetch_yahoo(query)
+
+    cheapest_per_store = {}
+    for entry in combined:
+        store = entry["store"]
+        price = entry["price"]
+        if store not in cheapest_per_store or price < cheapest_per_store[store]:
+            cheapest_per_store[store] = price
+
+    return [{"store": s, "price": p} for s, p in cheapest_per_store.items()]
 
 
 def build_report(products):
+    if not RAKUTEN_APP_ID and not YAHOO_CLIENT_ID:
+        print("[警告] RAKUTEN_APP_ID と YAHOO_CLIENT_ID のどちらも設定されていません。"
+              "GitHubのSecretsを確認してください。")
+
     results = []
     for product in products:
         print(f"検索中: {product['name']} ...")
         store_prices = fetch_store_prices(product["query"])
-        time.sleep(2)  # サイトへの負荷を減らすための待機
+        time.sleep(1)  # 各APIの利用制限（1クエリー/秒）を守るための待機
 
         if not store_prices:
             print("  → 店舗・価格が見つかりませんでした")
@@ -126,8 +152,7 @@ def build_report(products):
             )
             continue
 
-        sorted_by_price = sorted(store_prices, key=lambda r: r["price"])
-        cheapest_top5 = sorted_by_price[:5]
+        cheapest_top5 = sorted(store_prices, key=lambda r: r["price"])[:5]
         expensive_top5 = sorted(store_prices, key=lambda r: r["price"], reverse=True)[:5]
 
         results.append(
@@ -163,7 +188,7 @@ def render_html(results, generated_at: str) -> str:
         product_sections.append(f"""
     <section class="product">
       <h2>{r['name']}</h2>
-      <div class="store-count">確認できた店舗数: {r['store_count']}店舗</div>
+      <div class="store-count">確認できた店舗数: {r['store_count']}店舗（楽天市場＋Yahoo!ショッピング）</div>
       <div class="cards">
         <div class="card low">
           <h3>安い順 TOP5</h3>
@@ -209,7 +234,7 @@ def render_html(results, generated_at: str) -> str:
 </head>
 <body>
   <h1>🚽 トイレ商品 価格ランキング（商品別・店舗名つき）</h1>
-  <div class="updated">最終更新: {generated_at}（毎日10:00に自動更新）</div>
+  <div class="updated">最終更新: {generated_at}（毎日10:00に自動更新／楽天市場＋Yahoo!ショッピング公式APIより取得）</div>
   {''.join(product_sections)}
 </body>
 </html>
